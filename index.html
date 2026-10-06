@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  SONY VENICE 2 – CINEMA, IN YOUR FRAME
+  구성 파일: index.html(구조) / css/style.css(디자인) / js/main.js(기능)
+  [수정 가이드]
+  - 각 구역은 "===== 구역명 =====" 형태의 주석으로 구분됩니다.
+  - 이미지/영상 교체: "교체" 주석이 붙은 img, video 태그의 src만 바꾸세요.
+  - 문구 수정: 태그 안의 텍스트를 직접 수정하세요.
+  ============================================================
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VENICE 2 | Sony Cinema Line</title>
+  <meta name="description" content="영화의 한 장면처럼, 소니 VENICE 2">
+  <!-- 서체: 수정 시 css/style.css 의 --font 변수도 함께 변경 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== 1. 헤더 / 메뉴바 =====
+     메뉴 수정: <li> 항목의 텍스트와 href를 변경 (기획안: 소니스토어·제품정보·이벤트·고객지원·회사소개) -->
+<header class="header" id="header">
+  <a href="#hero" class="logo">SONY <span>VENICE 2</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false"><i></i><i></i><i></i></button>
+  <nav class="nav" id="nav">
+    <ul>
+      <li><a href="https://store.sony.co.kr" target="_blank" rel="noopener">소니스토어</a></li>
+      <li><a href="#product">제품정보</a></li>
+      <li><a href="#specs">이벤트</a></li>
+      <li><a href="#cta">고객지원</a></li>
+      <li><a href="#footer">회사소개</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+
+  <!-- 메인 이미지 -->
+  <img 
+    class="hero-media parallax" 
+    data-speed="0.3"
+    src="imgs/main.png"
+    alt="Sony VENICE 2"
+  >
+
+  <div class="hero-shade"></div>
+
+  <div class="hero-text">
+    <p class="kicker">Sony Cinema Line</p>
+    <h1>CINEMA,<br>IN YOUR FRAME</h1>
+    <p class="sub">영화의 한 장면을 만드는 카메라, VENICE 2</p>
+    <a href="#product" class="btn">EXPLORE VENICE 2</a>
+  </div>
+
+  <div class="scroll-hint">SCROLL</div>
+
+</section>
+
+
+    <!-- ===== 3. 제품 소개 (Hover 인터랙션) ===== -->
+<section class="section" id="product">
+  <div class="wrap two-col">
+
+    <div class="product-copy reveal">
+      <h2>한 프레임의 깊이를<br>끝까지 담다</h2>
+
+      <p>
+        풀프레임 6K 센서와 듀얼 베이스 ISO.
+        어두운 현장에서도 영화의 질감을 그대로 기록합니다.
+      </p>
+
+      <p class="hint">
+        이미지 위 빨간 점에 마우스를 올려보세요.
+      </p>
+    </div>
+
+    <div class="product-view reveal">
+
+      <img
+        class="product-img"
+        id="productImage"
+        src="imgs/main2.png"
+        alt="VENICE 2 카메라 본체"
+      >
+
+      <button
+        class="hotspot"
+        style="--x:22%;--y:48%"
+        data-title="렌즈 마운트"
+        data-desc="PL 마운트 기본 지원, E 마운트로 교체 가능"
+        data-image="imgs/sub1.png">
+      </button>
+
+      <button
+        class="hotspot"
+        style="--x:50%;--y:30%"
+        data-title="8.6K 풀프레임 센서"
+        data-desc="넓은 다이내믹 레인지와 정교한 색 재현"
+        data-image="imgs/sub2.png">
+      </button>
+
+      <button
+        class="hotspot"
+        style="--x:78%;--y:62%"
+        data-title="내장 ND 필터"
+        data-desc="8단계 전동 ND로 촬영 중에도 노출 조절"
+        data-image="imgs/sub3.png">
+      </button>
+
+      <div class="tooltip" id="tooltip" aria-live="polite">
+        <b></b>
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 4. 주요 기능 (패럴랙스 배경) ===== -->
+<section class="section feature parallax-box" id="features">
+  <img class="parallax-bg parallax" data-speed="0.25" src="imgs/sub4.png" alt=""><!-- 교체: 촬영 현장 배경 -->
+  <div class="wrap">
+    <h2 class="reveal">촬영 장면 속으로</h2>
+    <ul class="feature-list">
+      <li class="reveal"><h3>8.6K 풀프레임</h3><p>시네마 렌즈의 이미지 서클을 온전히 활용</p></li>
+      <li class="reveal"><h3>16스톱 다이내믹 레인지</h3><p>하이라이트와 섀도를 모두 살리는 표현력</p></li>
+      <li class="reveal"><h3>X-OCN · ProRes 기록</h3><p>후반 작업에 최적화된 고화질 코덱</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 5. Before / After 슬라이더 =====
+     같은 이미지를 두 겹으로 사용합니다. 두 img의 src를 동일하게 교체하세요. -->
+<section class="section" id="compare">
+  <div class="wrap center">
+    <h2 class="reveal">원본에서 영화의 색으로</h2>
+    <p class="reveal">슬라이더를 움직여 컬러 그레이딩 전후를 비교하세요.</p>
+    <div class="compare reveal" id="compare-box">
+      <img class="after" src="https://picsum.photos/seed/grade-scene/1200/675" alt="그레이딩 후"><!-- 교체: 그레이딩 후 이미지 -->
+      <div class="before-wrap" id="beforeWrap">
+        <img class="before" src="https://picsum.photos/seed/grade-scene/1200/675" alt="원본"><!-- 교체: 원본 이미지 (미교체 시 CSS 필터로 Log 느낌 표현) -->
+      </div>
+      <span class="tag tag-l">ORIGINAL</span><span class="tag tag-r">GRADED</span>
+      <div class="handle" id="handle"></div>
+      <input type="range" min="0" max="100" value="50" id="compareRange" aria-label="전후 비교 슬라이더">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. 스펙 (스크롤 시 하나씩 등장) =====
+     스펙 추가: <li class="spec reveal"> 블록을 복사. 숫자는 data-count 속성으로 카운트업 -->
+<section class="section dark" id="specs">
+  <div class="wrap">
+    <h2 class="reveal">Specifications</h2>
+    <ul class="spec-grid">
+      <li class="spec reveal"><em data-count="8.6" data-dec="1">0</em><b>K</b><p>센서 해상도</p></li>
+      <li class="spec reveal"><em data-count="16">0</em><b>stops</b><p>다이내믹 레인지</p></li>
+      <li class="spec reveal"><em data-count="8">0</em><b>단계</b><p>내장 ND 필터</p></li>
+      <li class="spec reveal"><em data-count="4000">0</em><b>ISO</b><p>듀얼 베이스 최대 ISO 기준</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 7. CTA ===== -->
+<section class="cta" id="cta">
+  <h2 class="reveal">당신의 다음 장면을 시작하세요</h2>
+  <a href="https://www.sony.co.kr" target="_blank" rel="noopener" class="btn reveal">DISCOVER MORE</a>
+</section>
+
+<!-- ===== 8. 푸터 ===== -->
+<footer class="footer" id="footer">
+  <p>© Sony Corporation. 본 페이지는 학습용 시안입니다.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
